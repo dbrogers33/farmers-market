@@ -10,6 +10,14 @@ var nunjucks = require('nunjucks');
 var mongoose = require('mongoose');
 var MongoClient = require('mongodb');
 
+mongoose.connect('mongodb://localhost/test');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('connection to mongodb established');
+});
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
