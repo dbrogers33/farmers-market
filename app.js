@@ -7,15 +7,8 @@ var bodyParser = require('body-parser');
 var nconf = require('nconf');
 var winston = require('winston');
 var nunjucks = require('nunjucks');
-
-// var ig = require('instagram').createClient('d1a22244a1a049cbb2cf05c5a7ea1406', '08032ee9a39241f785826b99f31c7c58');
-//
-// ig.media.popular(function (images, error) {
-//   if (error) {
-//     console.log(error);
-//   }
-//   console.log(images);
-// });
+var mongoose = require('mongoose');
+var MongoClient = require('mongodb');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
